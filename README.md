@@ -1,15 +1,16 @@
-# Getting Started with Create React App
+# Things To Do App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+To use the mock api please see [Things To Do API](https://github.com/amandalynngeorge/things-to-do-api) first.
 
 In the project directory, you can run:
 
 ### `yarn start`
 
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:3001](http://localhost:3001) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.

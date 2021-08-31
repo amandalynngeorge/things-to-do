@@ -1,10 +1,10 @@
 import './App.css';
-import ToDo from './components/ToDo.jsx';
+import Board from './components/Board.jsx';
 
 function App() {
   return (
     <div>
-      <ToDo/>
+      <Board/>
     </div>
   );
 }

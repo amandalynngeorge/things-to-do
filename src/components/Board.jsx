@@ -1,24 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import ToDo from './ToDo.jsx';
 import axios from 'axios';
+import { useRecoilState } from 'recoil';
+import { toDosState } from '../atoms'
 
-export default function Board() {
-  const [data, setData] = useState({items: [] });
+
+function Board() {
+  const [toDos, setToDos] = useRecoilState(toDosState);
+  
 
   useEffect(() => {
-    const fetchData = async () => {
+    const getToDos = async () => {
       const result = await axios('http://127.0.0.1:3000/to_do');
-      setData(result.data);
+      setToDos(result.data); 
     };
-    fetchData();
+    getToDos();
   }, []);
   
 
-  return (
+  return toDos.map((toDo) => (
     <div>
-      <h1>Things To Do</h1> 
-      <p>{console.log('The Things:', data)}</p>
-      <ToDo/>
+      {console.log(toDo)}
+      <ToDo
+        title={toDo.title}
+        description={toDo.description}
+        id={toDo.id}
+        done={toDo.done}
+      />
     </div>
-  )
+  ));
 }
+
+export default Board;

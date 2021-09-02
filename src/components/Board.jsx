@@ -20,7 +20,7 @@ function Board() {
 
   return toDos.map((toDo) => (
     <div>
-      {console.log(toDo)}
+      {console.log(toDos)}
       <ToDo
         title={toDo.title}
         description={toDo.description}

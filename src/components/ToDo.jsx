@@ -17,25 +17,25 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ToDo({title, description, done, id}) {
+export default function ToDo({toDo}) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root} variant="outlined">
       <CardContent>
         <Typography className={classes.title} gutterBottom>
-          {title}
+          {toDo.title}
         </Typography>
         <Checkbox
           value="done"
           inputProps={{ 'aria-label': 'Done' }}
-          checked={done}
+          checked={toDo.done}
         />
         <Typography component="p">
-          {description}
+          {toDo.description}
         </Typography>
         <Typography>
-          {id}
+          {toDo.id}
         </Typography>
       </CardContent>
     </Card>

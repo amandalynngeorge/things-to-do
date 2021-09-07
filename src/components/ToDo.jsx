@@ -2,8 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent';
-import Checkbox from '@material-ui/core/Checkbox';
 import Typography from '@material-ui/core/Typography';
+import DoneButton from './DoneButton.jsx'
 
 const useStyles = makeStyles({
   root: {
@@ -19,6 +19,7 @@ const useStyles = makeStyles({
 
 export default function ToDo({toDo}) {
   const classes = useStyles();
+  
 
   return (
     <Card className={classes.root} variant="outlined">
@@ -26,10 +27,7 @@ export default function ToDo({toDo}) {
         <Typography className={classes.title} gutterBottom>
           {toDo.title}
         </Typography>
-        <Checkbox
-          value="done"
-          inputProps={{ 'aria-label': 'Done' }}
-          checked={toDo.done}
+        <DoneButton toDo={toDo}
         />
         <Typography component="p">
           {toDo.description}

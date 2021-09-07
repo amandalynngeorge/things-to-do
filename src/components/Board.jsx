@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import ToDo from './ToDo.jsx';
 import axios from 'axios';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, selector } from 'recoil';
 import { toDoListState } from '../atoms'
 
 
 function Board() {
   const [toDoList, setToDoList] = useRecoilState(toDoListState);
-  
 
   useEffect(() => {
     const getToDoList = async () => {
@@ -16,8 +15,9 @@ function Board() {
     };
     getToDoList();
   }, []);
-  
-  console.log(toDoList)
+
+
+    
   return toDoList.map((toDo) => (
     <div>
       <ToDo key={toDo.id} toDo={toDo}/>
